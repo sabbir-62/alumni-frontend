@@ -1,0 +1,21 @@
+.error-page{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-home{
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 13rem;
+    margin: 50px auto;
+    height: 100%;
+}
+
+.home-btn{
+    padding: 7px 12px;
+    color: white;
+}

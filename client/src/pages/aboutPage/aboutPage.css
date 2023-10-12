@@ -1,0 +1,29 @@
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+}
+
+.about-card{
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.about-card{
+    width: 70%;
+    padding: 50px;
+    
+}
+
+.heading{
+    padding-left: 40px;
+    margin-bottom: 40px;
+}
+
+li{
+    list-style-type: none;
+    padding: 10px 0px;
+}
+
