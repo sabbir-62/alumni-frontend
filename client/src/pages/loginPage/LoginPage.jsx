@@ -26,7 +26,7 @@ const LoginPage = () => {
         const {email, password} = state;
 
         // backend api endpoint
-        const url = "http://localhost:8000/api/v1/login";
+        const url = "https://alumni-backend-hy7qkm2nw-sabbir-62.vercel.app/api/v1/login";
 
         // post data using fetch api
         await fetch(url, {

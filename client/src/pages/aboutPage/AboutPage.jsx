@@ -16,7 +16,7 @@ const AboutPage = () => {
 
     const callAboutPage = async() => {
         const cookie = Cookies.get("myCookie");
-        const url = "http://localhost:8000/api/v1/about";
+        const url = "https://alumni-backend-hy7qkm2nw-sabbir-62.vercel.app/api/v1/about";
         // post data using fetch api
         await fetch(url, {
             method: "POST",
