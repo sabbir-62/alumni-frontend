@@ -11,7 +11,7 @@ const Logout = () => {
         if(!cookie){
             navigate('/login');
         }
-   })
+   }, [])
     return (
         <div className="logout">
             
