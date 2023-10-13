@@ -1,0 +1,10 @@
+.hero{
+    width: 80rem;
+    height: 30rem;
+}
+
+.slider-image{
+    height: 30rem;
+    object-fit: cover;
+}
+

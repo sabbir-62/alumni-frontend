@@ -3,7 +3,7 @@ import {Routes, Route} from 'react-router-dom';
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import HomePage from './pages/homePage/HomePage';
-import AboutPage from './pages/aboutPage/AboutPage';
+import MyAccount from './pages/aboutPage/MyAccount';
 import ContactPage from './pages/contactPage/ContactPage';
 import LoginPage from './pages/loginPage/LoginPage';
 import RegistrationPage from './pages/registrationPage/RegistrationPage';
@@ -20,7 +20,7 @@ function App() {
    <>
     <Routes>
       <Route exact path='/' element={<HomePage />}></Route>
-      <Route exact path='/about' element={<AboutPage />}></Route>
+      <Route exact path='/my-account' element={<MyAccount />}></Route>
       <Route exact path='/contact' element={<ContactPage />}></Route>
       <Route exact path='/login' element={<LoginPage />}></Route>
       <Route exact path='/registration' element={<RegistrationPage />}></Route>

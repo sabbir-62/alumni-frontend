@@ -2,7 +2,7 @@ import './contactPage.css';
 
 const ContactPage = () => {
     return (
-        <div>
+        <div className='contact-page'>
             <div className="container contacts">
                 <div className="row contact-list">
                     <div className="col-md-3 contact">

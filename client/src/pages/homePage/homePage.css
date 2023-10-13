@@ -1,6 +1,31 @@
 .home{
-    height: 100vh;
+    height: 82vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.slider-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    text-align: center;
+}
+
+.header-text{
+    font-size:50px;
+}
+
+.hstu-logo{
+    width: 100px;
+    height: 115px;
+}
+
+@media only screen and (max-width: 1200px){
+	.hstu-logo{
+        margin-top: 50px;
+    }
 }

@@ -1,25 +1,14 @@
 import { NavLink } from 'react-router-dom';
 import Logo from '../../assets/pictures/logo.png';
 import './navbar.css';
-import { useEffect, useState } from 'react';
-import Cookies from 'js-cookie';
+
 
 const Navbar = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(!!Cookies.get('myCookie'));
 
-    useEffect(() => {
-        const cookieValue = Cookies.get('myCookie');
-        setIsLoggedIn(!!cookieValue); // Update isLoggedIn based on the cookie
-    }, []);
-
-    const handleLogout = () => {
-        Cookies.remove('myCookie'); // Remove the cookie
-        setIsLoggedIn(false); // Update isLoggedIn
-    }
 
     return (
         <div className='nav-wrapper'>
-            <nav className="navbar navbar-expand-lg bg-light">
+            <nav className="navbar navbar-expand-lg" style={{background: "#83caea"}}>
                 <div className="container-fluid">
                     <NavLink className="navbar-brand" to="/">
                         <img className='image-thumbnail' style={{ width: "50px" }} src={Logo} alt="logo" />
@@ -28,40 +17,30 @@ const Navbar = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
-                        {isLoggedIn ? (
+                     
                             <ul className="navbar-nav ms-auto">
                                 <li className="nav-item">
                                     <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/about">About</NavLink>
+                                    <NavLink className="nav-link" to="/my-account">My Account</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/contact">Contact</NavLink>
+                                    <NavLink className="nav-link" to="/news">News</NavLink>
                                 </li>
-                                <li className="nav-item" onClick={handleLogout}>
-                                    <NavLink className="nav-link" to="/logout">Logout</NavLink>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/notice">Notice</NavLink>
                                 </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/events">Events</NavLink>
+                                </li> 
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/gallery">Gallery</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/contact">Contact Us</NavLink>
+                                </li> 
                             </ul>
-                        ) : (
-                            <ul className="navbar-nav ms-auto">
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/about">About</NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/contact">Contact</NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/login">Login</NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/registration">Registration</NavLink>
-                                </li>
-                            </ul>
-                        )}
                     </div>
                 </div>
             </nav>

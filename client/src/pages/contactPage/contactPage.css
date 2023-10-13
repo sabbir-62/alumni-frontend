@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+.contact-page{
+    height: 100vh;
+}
 
 .contact-list{
     width: 100%;

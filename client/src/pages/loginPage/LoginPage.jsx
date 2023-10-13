@@ -26,7 +26,7 @@ const LoginPage = () => {
         const {email, password} = state;
 
         // backend api endpoint
-        const url = "https://alumni-backend-hy7qkm2nw-sabbir-62.vercel.app/api/v1/login";
+        const url = "https://alumni-psok.onrender.com/api/v1/login";
 
         // post data using fetch api
         await fetch(url, {
@@ -47,7 +47,7 @@ const LoginPage = () => {
                  if(data.success == true){
                     Cookies.set("myCookie", data.data);
                      //console.log("login", data.data);
-                     navigate('/');
+                     navigate('/my-account');
                  }
             }
             else{
@@ -66,7 +66,7 @@ const LoginPage = () => {
     }
     return (
         <>
-        <div className="registration">
+        <div className="login-page">
             <div className="container login">
                 <form className="login-form" method='POST' onSubmit={handleSubmit}>
                     <div className="form-group">
