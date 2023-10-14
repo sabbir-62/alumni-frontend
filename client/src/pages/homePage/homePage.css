@@ -17,6 +17,9 @@
 
 .header-text{
     font-size:50px;
+    color:  #004890;
+    font-weight: bold;
+    padding: 0px 30px;
 }
 
 .hstu-logo{
@@ -27,5 +30,9 @@
 @media only screen and (max-width: 1200px){
 	.hstu-logo{
         margin-top: 50px;
+    }
+    .header-text{
+        font-size: 30px;
+        margin: 0px 40px;
     }
 }

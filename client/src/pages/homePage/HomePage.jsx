@@ -10,7 +10,7 @@ const HomePage = () => {
                 <div className="slider">
                     <div className="header">
                         <img src={HSTU} className="hstu-logo" alt="" />
-                        <h1 className='mb-5 header-text'>Hajee Mohammad Danesh Science and Technology University Alumni Association</h1>
+                        <h1 className='mb-3 header-text'>Hajee Mohammad Danesh Science and Technology University Alumni Association</h1>
                     </div>
                     <div className='slider-image'><HomeSlider /></div>
                 </div>
