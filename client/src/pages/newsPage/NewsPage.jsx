@@ -8,7 +8,7 @@ const newsPage = () => {
     });
 
     const getNews = async() => {
-        const url = "htthttps://alumni-backend-hy7qkm2nw-sabbir-62.vercel.app/api/v1/news";
+        const url = "https://alumni-backend-git-master-sabbir-62.vercel.app/api/v1/news";
 
         await fetch(url, {
             method: "GET",
