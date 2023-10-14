@@ -9,7 +9,7 @@ import LoginPage from './pages/loginPage/LoginPage';
 import RegistrationPage from './pages/registrationPage/RegistrationPage';
 import ErrorPage from './pages/errorPage/ErrorPage'
 import Logout from './pages/logoutPage/Logout';
-import NewsPage from './pages/newsPage/NewsPage';
+import NewsPage from './pages/newsPage/newsPage'
 
 
 

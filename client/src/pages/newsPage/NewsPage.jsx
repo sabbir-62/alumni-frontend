@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import './newsPage.css'
 
-const NewsPage = () => {
+const newsPage = () => {
     const [news, setNews] = useState({
         title: [],
         description: []
@@ -53,4 +53,4 @@ const NewsPage = () => {
     );
 };
 
-export default NewsPage;
+export default newsPage;
