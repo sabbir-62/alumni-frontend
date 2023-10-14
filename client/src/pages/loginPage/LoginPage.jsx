@@ -26,7 +26,7 @@ const LoginPage = () => {
         const {email, password} = state;
 
         // backend api endpoint
-        const url = "https://alumni-psok.onrender.com/api/v1/login";
+        const url = "http://localhost:8000/api/v1/login";
 
         // post data using fetch api
         await fetch(url, {

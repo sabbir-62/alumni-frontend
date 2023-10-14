@@ -4,11 +4,12 @@ import './newsPage.css'
 const NewsPage = () => {
     const [news, setNews] = useState({
         title: [],
-        description: []
+        description: [],
+        date: []
     });
 
     const getNews = async() => {
-        const url = "https://alumni-backend-git-master-sabbir-62.vercel.app/api/v1/news";
+        const url = "http://localhost:8000/api/v1/news";
 
         await fetch(url, {
             method: "GET",
@@ -22,16 +23,16 @@ const NewsPage = () => {
                 alert(data.message);
             }
             else {
-                // Extract titles and descriptions into separate arrays
+                // Extract titles, descriptions, and dates into separate arrays
                 const titles = data.news.map(newsItem => newsItem.title);
                 const descriptions = data.news.map(newsItem => newsItem.description);
-
-                console.log("titles: ", titles, "\n", "Descriptions: ", descriptions)
+                const dates = data.news.map(newsItem => new Date(newsItem.createdAt).toLocaleDateString());
 
                 // Update the state with the extracted data
                 setNews({
                     title: titles,
-                    description: descriptions
+                    description: descriptions,
+                    date: dates
                 });
             }
         });
@@ -43,12 +44,17 @@ const NewsPage = () => {
 
     return (
         <div className="news-container">
-            {news.title.map((title, index) => (
-                <div key={index}>
-                    <p>Title: {title}</p>
-                    <p>Description: {news.description[index]}</p>
-                </div>
-            ))}
+            <div className="news">
+                {news.title.map((title, index) => 
+                    ( 
+                    <div key={index} className="m-5 news-block p-5">
+                        <p className="title">{title}</p>
+                        <p className="news-date">{news.date[index]}</p>
+                        <p className="description">{news.description[index]}</p>
+                        <button className="btn btn-success mt-3">Read More</button>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

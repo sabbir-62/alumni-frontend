@@ -32,7 +32,7 @@ const RegistrationPage = () => {
         const {name, email, phone, role, password, confirmPassword} = state;
 
         // backend api endpoint
-        const url = "https://alumni-psok.onrender.com/api/v1/registration";
+        const url = "http://localhost:8000/api/v1/registration";
 
         // post data using fetch api
         await fetch(url, {

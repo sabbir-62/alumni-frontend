@@ -3,7 +3,7 @@ import {Routes, Route} from 'react-router-dom';
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import HomePage from './pages/homePage/HomePage';
-import MyAccount from './pages/aboutPage/MyAccount';
+import MyAccount from './pages/myAccount/MyAccount';
 import ContactPage from './pages/contactPage/ContactPage';
 import LoginPage from './pages/loginPage/LoginPage';
 import RegistrationPage from './pages/registrationPage/RegistrationPage';

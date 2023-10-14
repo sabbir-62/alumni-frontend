@@ -16,7 +16,7 @@ const MyAccount = () => {
 
     const myAccountPage = async() => {
         const cookie = Cookies.get("myCookie");
-        const url = "https://alumni-psok.onrender.com/api/v1/about";
+        const url = "http://localhost:8000/api/v1/about";
         // post data using fetch api
         await fetch(url, {
             method: "POST",
