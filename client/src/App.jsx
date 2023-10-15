@@ -10,6 +10,7 @@ import RegistrationPage from './pages/registrationPage/RegistrationPage';
 import ErrorPage from './pages/errorPage/ErrorPage'
 import Logout from './pages/logoutPage/Logout';
 import NewsPage from './pages/newsPage/NewsPage'
+import GraduateList from './pages/listOfGraduates/GraduateList';
 
 
 
@@ -22,6 +23,7 @@ function App() {
     <Routes>
       <Route exact path='/' element={<HomePage />}></Route>
       <Route exact path='/my-account' element={<MyAccount />}></Route>
+      <Route exact path='/graduates-list' element={<GraduateList />}></Route>
       <Route exact path='/news' element={<NewsPage />}></Route>
       <Route exact path='/contact' element={<ContactPage />}></Route>
       <Route exact path='/login' element={<LoginPage />}></Route>
