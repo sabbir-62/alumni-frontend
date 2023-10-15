@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import './newsPage.css'
 
 const NewsPage = () => {
@@ -42,6 +43,23 @@ const NewsPage = () => {
         getNews();
     }, []);
 
+
+    let count = 0;
+    const handleClick = (index) => { 
+        const descriptionElements = document.getElementsByClassName("description");
+
+        if (descriptionElements.length > index) {
+            descriptionElements[index].style.color = "rgb(48, 47, 47)";
+            descriptionElements[index].style.height = '100%';
+            count = count + 1;
+            if(count == 2){
+                descriptionElements[index].style.height = '4.5rem';
+                count = 0;
+            }
+        }
+    }
+    
+
     return (
         <div className="news-container">
             <div className="news">
@@ -51,7 +69,7 @@ const NewsPage = () => {
                         <p className="title">{title}</p>
                         <p className="news-date">{news.date[index]}</p>
                         <p className="description">{news.description[index]}</p>
-                        <button className="btn btn-success mt-3">Read More</button>
+                        <button id="button" className="btn btn-success mt-3" onClick={()=>handleClick(index)}>Read More</button>
                     </div>
                 ))}
             </div>

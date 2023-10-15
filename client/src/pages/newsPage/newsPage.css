@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 60px;
 }
 
 .news{
@@ -20,4 +21,9 @@
 
 .news-block .news-date{
     margin-bottom: 20px;
+}
+
+.news-block .description{
+    height: 4.5rem;
+    overflow: hidden;
 }
