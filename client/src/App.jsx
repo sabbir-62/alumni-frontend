@@ -11,6 +11,8 @@ import ErrorPage from './pages/errorPage/ErrorPage'
 import Logout from './pages/logoutPage/Logout';
 import NewsPage from './pages/newsPage/NewsPage'
 import GraduateList from './pages/listOfGraduates/GraduateList';
+import GalleryPage from './pages/galleryPage/GalleryPage';
+import EventPage from './pages/eventsPage/EventPage';
 
 
 
@@ -25,6 +27,8 @@ function App() {
       <Route exact path='/my-account' element={<MyAccount />}></Route>
       <Route exact path='/graduates-list' element={<GraduateList />}></Route>
       <Route exact path='/news' element={<NewsPage />}></Route>
+      <Route exact path='/gallery' element={<GalleryPage />}></Route>
+      <Route exact path='/events' element={<EventPage />}></Route>
       <Route exact path='/contact' element={<ContactPage />}></Route>
       <Route exact path='/login' element={<LoginPage />}></Route>
       <Route exact path='/registration' element={<RegistrationPage />}></Route>
