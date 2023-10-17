@@ -9,8 +9,12 @@ const RegistrationPage = () => {
     // Initial state
     const [state, setState] = useState({
         name: "",
+        studentId: "",
+        department: "",
+        passingYear: "",
         email: "",
         phone: "",
+        company: "",
         role: "",
         password: "",
         confirmPassword: ""
@@ -29,7 +33,7 @@ const RegistrationPage = () => {
     // push data into database from registration page using fetch api
     const handleSubmit = async(e) => {
         e.preventDefault();
-        const {name, email, phone, role, password, confirmPassword} = state;
+        const {name, studentId, department, passingYear, email, phone, company, role, password, confirmPassword} = state;
 
         // backend api endpoint
         const url = "http://localhost:8000/api/v1/registration";
@@ -41,7 +45,7 @@ const RegistrationPage = () => {
                 "Content-Type" : "application/json"
             },
             body: JSON.stringify({
-                name, email, phone, role, password, confirmPassword
+                name, studentId, department, passingYear, email, phone, company, role, password, confirmPassword
             })
         })
        .then((response) => response.json())
@@ -63,8 +67,12 @@ const RegistrationPage = () => {
        // reset form field value with empty
         setState({
           name: '',
+          studentId: '',
+          department: '',
+          passingYear: '',
           email: '',
           phone: '',
+          company: '',
           role: '',
           password: '',
           confirmPassword: ''
@@ -82,9 +90,24 @@ const RegistrationPage = () => {
         <div className="registration">
             <div className="container registration-card">
                 <form className="registration-form" method='POST' onSubmit={handleSubmit}>
+                    <h1 className="form-heading">
+                        Registration
+                    </h1>
                     <div className="form-group">
                         <label htmlFor="name"></label>
                         <input type="text" name="name" id='name' className='input-field' autoComplete='off' value={state.name} onChange={(e) => {setValues("name", e.target.value)}} placeholder="Enter Your Name"/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="studentId"></label>
+                        <input type="text" name="studentId" id='studentId' className='input-field' autoComplete='off' value={state.studentId} onChange={(e) => {setValues("studentId", e.target.value)}} placeholder="Enter Your Student ID"/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="department"></label>
+                        <input type="text" name="department" id='department' className='input-field' autoComplete='off' value={state.department} onChange={(e) => {setValues("department", e.target.value)}} placeholder="Enter Your Department Name"/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="passingYear"></label>
+                        <input type="text" name="passingYear" id='passingYear' className='input-field' autoComplete='off' value={state.passingYear} onChange={(e) => {setValues("passingYear", e.target.value)}} placeholder="Enter Your Passing Year"/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="email"></label>
@@ -93,6 +116,10 @@ const RegistrationPage = () => {
                     <div className="form-group">
                         <label htmlFor="phone"></label>
                         <input type="tel" name='phone' id='phone' className='input-field' autoComplete='off' value={state.phone} onChange={(e) => {setValues("phone", e.target.value)}} placeholder="Enter Your Mobile Number"/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="company"></label>
+                        <input type="text" name='company' id='company' className='input-field' autoComplete='off' value={state.company} onChange={(e) => {setValues("company", e.target.value)}} placeholder="Enter Company Name"/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="role"></label>

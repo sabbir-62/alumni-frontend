@@ -7,8 +7,12 @@ const MyAccount = () => {
 
     const [state, setState] = useState({
         name: "",
+        studentId: "",
+        department: "",
+        passingYear: "",
         email: "",
         phone: "",
+        company: "",
         role: ""
     })
 
@@ -37,8 +41,12 @@ const MyAccount = () => {
             else{
                 setState({
                     name:data.user.name,
+                    studentId: data.user.studentId,
+                    department: data.user.department,
+                    passingYear: data.user.passingYear,
                     email: data.user.email,
                     phone: data.user.phone,
+                    company: data.user.company,
                     role: data.user.role
                 })
             }
@@ -77,10 +85,22 @@ const MyAccount = () => {
                                 Name :
                             </li>
                             <li>
+                                Student Id :
+                            </li>
+                            <li>
+                                Department :
+                            </li>
+                            <li>
+                                Passing Year :
+                            </li>
+                            <li>
                                 Email :
                             </li>
                             <li>
                                 Phone :
+                            </li>
+                            <li>
+                                Current Company :
                             </li>
                             <li>
                                 Role :
@@ -93,10 +113,22 @@ const MyAccount = () => {
                                 {state.name}
                             </li>
                             <li>
+                                {state.studentId}
+                            </li>
+                            <li>
+                                {state.department}
+                            </li>
+                            <li>
+                                {state.passingYear}
+                            </li>
+                            <li>
                                 {state.email}
                             </li>
                             <li>
                                 {state.phone}
+                            </li>
+                            <li>
+                                {state.company}
                             </li>
                             <li>
                                 {state.role}
