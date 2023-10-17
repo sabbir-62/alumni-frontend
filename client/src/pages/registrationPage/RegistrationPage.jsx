@@ -66,16 +66,16 @@ const RegistrationPage = () => {
         
        // reset form field value with empty
         setState({
-          name: '',
-          studentId: '',
-          department: '',
-          passingYear: '',
-          email: '',
-          phone: '',
-          company: '',
-          role: '',
-          password: '',
-          confirmPassword: ''
+        //   name: '',
+        //   studentId: '',
+        //   department: '',
+        //   passingYear: '',
+        //   email: '',
+        //   phone: '',
+        //   company: '',
+        //   role: '',
+        //   password: '',
+        //   confirmPassword: ''
         });
     }
 
