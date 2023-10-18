@@ -20,6 +20,10 @@ const MyAccount = () => {
 
     const myAccountPage = async() => {
         const cookie = Cookies.get("myCookie");
+        if(!cookie){
+            alert("Please Login")
+            navigate('/login')
+        }
         const url = "http://localhost:8000/api/v1/about";
         // post data using fetch api
         await fetch(url, {
@@ -35,7 +39,6 @@ const MyAccount = () => {
        .then((response) => response.json())
        .then((data) => {
             if(!data.success){
-                alert(data.message)
                 navigate('/login');
             }
             else{

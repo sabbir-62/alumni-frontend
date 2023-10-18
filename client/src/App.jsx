@@ -17,12 +17,10 @@ import EventPage from './pages/eventsPage/EventPage';
 
 
 
-
-
 function App() {
   return (
    <>
-    <Routes>
+      <Routes>
       <Route exact path='/' element={<HomePage />}></Route>
       <Route exact path='/my-account' element={<MyAccount />}></Route>
       <Route exact path='/graduates-list' element={<GraduateList />}></Route>
@@ -34,7 +32,7 @@ function App() {
       <Route exact path='/registration' element={<RegistrationPage />}></Route>
       <Route exact path='/logout' element={<Logout />}></Route>
       <Route exact path='*' element={<ErrorPage />}></Route>
-    </Routes>
+      </Routes> 
    </>
   )     
 }

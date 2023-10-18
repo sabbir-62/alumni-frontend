@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { useNavigate  } from 'react-router-dom';
+import Cookies from "js-cookie";
 import './graduateList.css'
 
 const GraduateList = () => {
@@ -12,8 +14,16 @@ const GraduateList = () => {
         role: []
     });
 
+    const navigate = useNavigate(); // Call useNavigate as a function
+
     const list = async() => {
         const url = "http://localhost:8000/api/v1/graduates-list";
+        const cookie = Cookies.get("myCookie");
+
+        if(!cookie){
+            alert("Please Login")
+            navigate('/login')
+        }
 
         await fetch(url, {
             method: "GET",
