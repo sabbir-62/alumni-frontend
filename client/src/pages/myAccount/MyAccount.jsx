@@ -3,9 +3,11 @@ import { useNavigate  } from 'react-router-dom';
 import Cookies from "js-cookie";
 import './myAccount.css'
 import { toast } from 'react-toastify';
+import { BeatLoader } from "react-spinners";
 
 const MyAccount = () => {
 
+    const [loading, setLoading] = useState(true)
     const [state, setState] = useState({
         name: "",
         studentId: "",
@@ -53,6 +55,8 @@ const MyAccount = () => {
                     company: data.user.company,
                     role: data.user.role
                 })
+
+                setLoading(false)
             }
            
        })
@@ -68,7 +72,7 @@ const MyAccount = () => {
     const handleClick = () => {
         Cookies.remove("myCookie");
         navigate('/login');
-        toast.success("Logout Success. Please Login")
+        toast.success("Logout Success")
     }
 
 
@@ -77,7 +81,20 @@ const MyAccount = () => {
     }, []); // Empty dependency array to run the effect once
 
     return (
-        <div className="container about">
+        <div>
+            {
+                loading ?
+                (
+                    <div className="loader">
+                      <BeatLoader
+                        color={"#36d7b7"}
+                        loading={loading}
+                        size={15}
+                      />
+                    </div>
+                  )
+                :
+                <div className="container about">
             <div className="row about-card">
                 <div className="heading">
                     <h1>{state.name}</h1>
@@ -142,6 +159,8 @@ const MyAccount = () => {
                 </div>
                 <button className='btn btn-danger mt-3 ms-5' onClick={handleClick}>Logout</button>
             </div>    
+        </div>
+            }
         </div>
     );
 };

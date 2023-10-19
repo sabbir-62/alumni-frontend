@@ -34,7 +34,7 @@ const ContactPage = () => {
                             <input className='input' type="text" placeholder='Your Phone Number'/>
                         </form>
                         <div>
-                            <textarea className = 'text mt-5' name="" id="" cols="40" rows="10"></textarea>
+                            <textarea className = 'text mt-4' name="" id="" cols="40" rows="10"></textarea>
                         </div>
                         <div className="button">
                             <button type="submit" className="btn btn-primary">Submit</button>

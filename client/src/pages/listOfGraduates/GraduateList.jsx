@@ -4,8 +4,10 @@ import Cookies from "js-cookie";
 import './graduateList.css'
 
 import { toast } from 'react-toastify';
+import { BeatLoader } from "react-spinners";
 
 const GraduateList = () => {
+    const [loading, setLoading] = useState(true);
     const [state, setState] = useState({
         name: [],
         department: [],
@@ -59,19 +61,36 @@ const GraduateList = () => {
                     company: companies,
                     role: roles
                 });
+                setLoading(false)
                  
             }
         });
     }
 
-    console.log("name: ", state.name)
+    console.log("name: ", state.name);
+
+
     useEffect(() => {
         list();
     }, []);
 
+
+
     return (
         <div>
-          <div className="container lists">
+          {
+            loading ?
+            (
+                <div className="loader">
+                  <BeatLoader
+                    color={"#36d7b7"}
+                    loading={loading}
+                    size={15}
+                  />
+                </div>
+              )
+            :
+            <div className="container lists">
             <div className="row list">
                 {state.name.map((name, index) => 
                     ( 
@@ -86,8 +105,9 @@ const GraduateList = () => {
                     </div>
                 ))}
                    
-            </div>    
-        </div>
+                </div>    
+            </div>
+          }
         </div>
     );
 };

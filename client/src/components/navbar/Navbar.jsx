@@ -8,7 +8,7 @@ const Navbar = () => {
 
     return (
         <div className='nav-wrapper'>
-            <nav className="navbar navbar-expand-lg" style={{background: "#83caea"}}>
+            <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
                     <NavLink className="navbar-brand" to="/">
                         <img className='image-thumbnail' style={{ width: "50px" }} src={Logo} alt="logo" />

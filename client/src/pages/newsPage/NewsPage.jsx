@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import './newsPage.css'
 import { toast } from 'react-toastify';
+import { BeatLoader } from "react-spinners";
+
 
 const NewsPage = () => {
+    const [loading, setLoading] = useState(true);
     const [news, setNews] = useState({
         title: [],
         description: [],
@@ -35,9 +38,12 @@ const NewsPage = () => {
                     description: descriptions,
                     date: dates
                 });
+                setLoading(false)
             }
         });
     }
+
+    
 
     useEffect(() => {
         getNews();
@@ -62,7 +68,19 @@ const NewsPage = () => {
 
     return (
         <div className="news-container">
-            <div className="news">
+            {
+                loading ?
+                (
+                    <div className="loader">
+                      <BeatLoader
+                        color={"#36d7b7"}
+                        loading={loading}
+                        size={15}
+                      />
+                    </div>
+                  )
+                :
+                <div className="news">
                 {news.title.map((title, index) => 
                     ( 
                     <div key={index} className="m-5 news-block p-5">
@@ -73,6 +91,7 @@ const NewsPage = () => {
                     </div>
                 ))}
             </div>
+            }
         </div>
     );
 };
