@@ -3,6 +3,9 @@ import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Cookies from "js-cookie"; 
 //import { useCookies } from 'react-cookie'
+import { toast } from 'react-toastify';
+
+
 
 const LoginPage = () => {
     const [state, setState] = useState({
@@ -40,8 +43,8 @@ const LoginPage = () => {
         })
        .then((response) => response.json())
        .then((data) => {
-            if(data.message){
-                alert(data.message);
+            if(data.success){
+                toast.success(data.message);
                 
                 //console.log(data.data)
                  if(data.success == true){
@@ -51,7 +54,7 @@ const LoginPage = () => {
                  }
             }
             else{
-                alert("Something went wrong!")
+                toast.error(data.message)
             }
        })
        .catch((error) => {

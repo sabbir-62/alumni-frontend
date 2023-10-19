@@ -2,6 +2,7 @@
 import './registration.css'
 import { useState } from 'react';
 import { NavLink, useNavigate  } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 
@@ -50,14 +51,14 @@ const RegistrationPage = () => {
         })
        .then((response) => response.json())
        .then((data) => {
-            if(data.message){
-                alert(data.message);
+            if(data.success){
+                toast.success(data.message);
                 if(data.success == true){
-                    navigate('/');
+                    navigate('/login');
                 }
             }
             else{
-                alert("Something went wrong!")
+                toast.error("Something went wrong!")
             }
        })
        .catch((error) => {

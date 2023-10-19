@@ -14,6 +14,11 @@ import GraduateList from './pages/listOfGraduates/GraduateList';
 import GalleryPage from './pages/galleryPage/GalleryPage';
 import EventPage from './pages/eventsPage/EventPage';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import './App.css'
+
 
 
 
@@ -32,7 +37,18 @@ function App() {
       <Route exact path='/registration' element={<RegistrationPage />}></Route>
       <Route exact path='/logout' element={<Logout />}></Route>
       <Route exact path='*' element={<ErrorPage />}></Route>
-      </Routes> 
+      </Routes>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        draggable
+        theme="dark"
+      />
+
    </>
   )     
 }

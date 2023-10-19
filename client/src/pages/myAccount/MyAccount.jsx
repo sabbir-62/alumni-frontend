@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
 import Cookies from "js-cookie";
 import './myAccount.css'
+import { toast } from 'react-toastify';
 
 const MyAccount = () => {
 
@@ -21,7 +22,7 @@ const MyAccount = () => {
     const myAccountPage = async() => {
         const cookie = Cookies.get("myCookie");
         if(!cookie){
-            alert("Please Login")
+            toast.warning("Please Login")
             navigate('/login')
         }
         const url = "http://localhost:8000/api/v1/about";
@@ -67,7 +68,7 @@ const MyAccount = () => {
     const handleClick = () => {
         Cookies.remove("myCookie");
         navigate('/login');
-        alert("Logout Success. Please Login")
+        toast.success("Logout Success. Please Login")
     }
 
 

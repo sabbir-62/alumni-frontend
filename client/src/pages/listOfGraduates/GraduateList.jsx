@@ -3,6 +3,8 @@ import { useNavigate  } from 'react-router-dom';
 import Cookies from "js-cookie";
 import './graduateList.css'
 
+import { toast } from 'react-toastify';
+
 const GraduateList = () => {
     const [state, setState] = useState({
         name: [],
@@ -21,7 +23,7 @@ const GraduateList = () => {
         const cookie = Cookies.get("myCookie");
 
         if(!cookie){
-            alert("Please Login")
+            toast.warning("Please Login")
             navigate('/login')
         }
 
@@ -34,7 +36,7 @@ const GraduateList = () => {
         .then((response) => response.json())
         .then((data) => {
             if (!data.success) {
-                alert(data.message);
+                toast.error(data.message);
             }
             else {
                 // Extract titles, descriptions, and dates into separate arrays

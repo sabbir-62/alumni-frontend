@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import './newsPage.css'
+import { toast } from 'react-toastify';
 
 const NewsPage = () => {
     const [news, setNews] = useState({
@@ -21,7 +21,7 @@ const NewsPage = () => {
         .then((response) => response.json())
         .then((data) => {
             if (!data.success) {
-                alert(data.message);
+                toast.error(data.message);
             }
             else {
                 // Extract titles, descriptions, and dates into separate arrays

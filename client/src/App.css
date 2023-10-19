@@ -1,0 +1,10 @@
+.custom-toast-container {
+    /* Custom transition properties */
+    transition-property: opacity, transform;
+    transition-duration: 40s;
+    transition-timing-function: ease-in-out;
+  
+    
+    border-radius: 100px;
+  }
+  
