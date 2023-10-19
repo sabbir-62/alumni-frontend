@@ -57,7 +57,7 @@ function App() {
               <Route exact path='/logout' element={<Logout />}></Route>
               <Route exact path='*' element={<ErrorPage />}></Route>
           </Routes>
-          <Footer />
+          <Footer className="footer-app"/>
           <ToastContainer
             position="top-center"
             autoClose={2000}

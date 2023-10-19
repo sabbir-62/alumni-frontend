@@ -94,7 +94,7 @@ const MyAccount = () => {
                     </div>
                   )
                 :
-                <div className="container about">
+                <div className="container about min-height">
             <div className="row about-card">
                 <div className="heading">
                     <h1>{state.name}</h1>
@@ -103,56 +103,28 @@ const MyAccount = () => {
                     <div className="col-md-6">
                         <ul>
                             <li>
-                                Name :
+                                Name : {state.name}
                             </li>
                             <li>
-                                Student Id :
+                                Student Id : {state.studentId}
                             </li>
                             <li>
-                                Department :
+                                Department : {state.department}
                             </li>
                             <li>
-                                Passing Year :
+                                Passing Year : {state.passingYear}
                             </li>
                             <li>
-                                Email :
+                                Email : {state.email}
                             </li>
                             <li>
-                                Phone :
+                                Phone : {state.phone}
                             </li>
                             <li>
-                                Current Company :
+                                Current Company : {state.company}
                             </li>
                             <li>
-                                Role :
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="col-md-6">
-                        <ul>
-                            <li>
-                                {state.name}
-                            </li>
-                            <li>
-                                {state.studentId}
-                            </li>
-                            <li>
-                                {state.department}
-                            </li>
-                            <li>
-                                {state.passingYear}
-                            </li>
-                            <li>
-                                {state.email}
-                            </li>
-                            <li>
-                                {state.phone}
-                            </li>
-                            <li>
-                                {state.company}
-                            </li>
-                            <li>
-                                {state.role}
+                                Role : {state.role}
                             </li>
                         </ul>
                     </div>

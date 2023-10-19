@@ -1,5 +1,5 @@
 .home{
-    height: 90vh;
+    background: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,15 +25,18 @@
 .hstu-logo{
     width: 100px;
     height: 115px;
-    margin-top: 3rem;
+    margin-top: 5rem;
 }
 
 @media only screen and (max-width: 1200px){
-	.hstu-logo{
-        margin-top: 50px;
-    }
     .header-text{
         font-size: 30px;
         margin: 0px 40px;
     }
+}
+
+
+.home-text{
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

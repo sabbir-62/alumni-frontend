@@ -2,7 +2,8 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 15px;
-    margin: 7.4rem 5rem 2.6rem 5rem;
+    padding: 5rem;
+
 }
 
 .gallery__img {

@@ -2,4 +2,12 @@
     width: 100%;
     position: fixed;
     top: 0;
+    background-color: #83caea;
+    z-index: 1;
+}
+
+@media (max-width: 991px) {
+    .nav-wrapper{
+        z-index: 1;
+    }
 }

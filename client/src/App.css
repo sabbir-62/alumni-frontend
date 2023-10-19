@@ -1,6 +1,24 @@
+.app{
+    font-family: 'Open Sans', sans-serif;
+}
+
 .loader{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.footer-app{
+    margin-top: auto;
+}
+
+.app-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.min-height{
+    min-height: calc(100vh - 80px)
 }

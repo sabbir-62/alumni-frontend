@@ -1,29 +1,39 @@
-.about{
+.about {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    min-height: 92vh;
     padding-top: 5rem;
 }
 
-.about-card{
+.about-card {
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 50%; /* Adjust width for smaller screens */
+    margin: 10px; /* Add margin for spacing on smaller screens */
 }
 
-.about-card{
-    width: 70%;
-    padding: 50px;
-    
+.heading {
+    margin: 20px; /* Reduce margin for smaller screens */
 }
 
-.heading{
-    padding-left: 40px;
-    margin-bottom: 40px;
-}
-
-li{
+li {
     list-style-type: none;
-    padding: 10px 0px;
+    padding: 10px 0;
 }
 
+.button-container {
+    text-align: center;
+}
+
+/* Media Query for screens with a maximum width of 768px (typical for mobile devices) */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .about-card {
+        width: 95%; /* Further adjust width for smaller screens */
+    }
+}

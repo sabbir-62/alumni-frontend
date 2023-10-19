@@ -34,7 +34,7 @@ const GalleryPage = () => {
                     </div>
                   )
                   :
-                <div className="gallery">
+                <div className="gallery min-height">
                     <div className="gallery__item gallery__item--1">
                         <img src={ari_building} className="gallery__img" alt="Image 1" />
                     </div>
