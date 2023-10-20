@@ -152,11 +152,11 @@ const MyAccount = () => {
                   )
                 :
                 
-               <div className="container">
+               <div className="container profile">
                  <div className="profile-card min-height">
                 <form className="profile-form" method='POST' onSubmit={handleSubmit}>
                     <h1 className="profile-heading">
-                        Profile Setting
+                        Your Profile
                     </h1>
                     <div className="profile-box">
                         <div className="profile-field">

@@ -1,16 +1,18 @@
-.profile-card{
-    width: 70%;
-    padding: 8rem;
-    margin: 0 auto;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+.profile{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+}
+.profile-card{   
+    width: 50%;
 }
 
 .profile-form{
-    width: 90%;
+    width: 100%;
+    margin: 7rem 0 2rem 0;
+    padding: 2rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 8px;
 }
 
 .profile-box{
@@ -18,7 +20,13 @@
 
 .profile-heading{
     text-align: center;
-    padding-bottom: 40px;
+    padding: 15px;
+    margin-bottom: 50px;
+    color: rgb(66, 5, 122);
+    font-weight: 700;
+    border: outset;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .profile-field{
@@ -32,7 +40,7 @@ label{
 }
 
 .profile-input{
-   padding: 5px 10px;
+   padding: 6px 10px;
    border-radius: 5px;
    border: 1px solid gray;
 }
@@ -43,15 +51,30 @@ label{
 }
 
 .ac-btn{
-    width: 205px;
+    width: 250px;
+    height: 45px;
 }
 
 /* Media Query for screens with a maximum width of 768px (typical for mobile devices) */
+@media (max-width: 1399px) {
+    .ac-btn{
+        width: 220px;
+    }
+    .profile-card{
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile-form{
+        width: 100vw;
+    }
+}
+
 @media (max-width: 1199px) {
     .ac-btn{
-        width: 150px;
+        width: 200px;
     }
-    
 }
 
 @media (max-width: 991px) {
@@ -59,7 +82,6 @@ label{
         display: grid;
         grid-template-columns: 12fr;
         margin: 20px 0;
-        width: 200px;
     }
     .account-buttons{
         display: flex;
@@ -67,7 +89,7 @@ label{
     }
 
     .ac-btn{
-        width: 205px;
+        width: 100%;
     }
     
 }
