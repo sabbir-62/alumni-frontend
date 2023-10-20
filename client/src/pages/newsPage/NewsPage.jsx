@@ -59,6 +59,7 @@ const NewsPage = () => {
             descriptionElements[index].style.color = "rgb(48, 47, 47)";
             descriptionElements[index].style.height = '100%';
             count = count + 1;
+            
             if(count == 2){
                 descriptionElements[index].style.height = '4.5rem';
                 count = 0;
@@ -74,7 +75,7 @@ const NewsPage = () => {
     
 
     return (
-        <div className="news-container">
+        <div className="news-container container">
             {
                 loading ?
                 (

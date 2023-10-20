@@ -21,6 +21,7 @@ import { BeatLoader } from "react-spinners";
 
 import './App.css';
 import { useEffect, useState } from 'react';
+import AddNews from './pages/addNewsPage/AddNews';
 
 function App() {
   const [loading, setLoading] = useState(true); // Set loading to true initially
@@ -49,6 +50,7 @@ function App() {
               <Route exact path='/my-account' element={<MyAccount />}></Route>
               <Route exact path='/graduates-list' element={<GraduateList />}></Route>
               <Route exact path='/news' element={<NewsPage />}></Route>
+              <Route exact path='/create-news' element={<AddNews />}></Route>
               <Route exact path='/gallery' element={<GalleryPage />}></Route>
               <Route exact path='/events' element={<EventPage />}></Route>
               <Route exact path='/contact' element={<ContactPage />}></Route>

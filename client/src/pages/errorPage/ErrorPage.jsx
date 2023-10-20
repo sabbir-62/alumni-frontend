@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const ErrorPage = () => {
     return (
        <>
-            <div className='error-page'>
+            <div className='error-page min-height'>
                 <div className="error">
                     <div className="error-text">
                         <h1>We are sorry. Page not found!</h1>
