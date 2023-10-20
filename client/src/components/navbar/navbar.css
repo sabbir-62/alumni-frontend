@@ -4,6 +4,7 @@
     top: 0;
     background-color: #83caea;
     z-index: 1;
+    padding: 10px;
 }
 
 @media (max-width: 991px) {

@@ -34,7 +34,7 @@
 
 }
 
-.btn{
+.submit-btn{
     width: 20%;
     text-align: center;
 }
@@ -53,7 +53,7 @@
         display: flex;
         flex-direction: column;
     }
-    .btn{
+    .submit-btn{
         width: 100%;
         text-align: center;
         margin-bottom: 20px;

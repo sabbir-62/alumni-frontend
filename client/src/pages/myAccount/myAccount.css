@@ -1,39 +1,70 @@
-.about {
+.profile-card{
+    width: 70%;
+    padding: 8rem;
+    margin: 0 auto;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 92vh;
-    padding-top: 5rem;
+    
 }
 
-.about-card {
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    width: 50%; /* Adjust width for smaller screens */
-    margin: 10px; /* Add margin for spacing on smaller screens */
+.profile-form{
+    width: 90%;
 }
 
-.heading {
-    margin: 20px; /* Reduce margin for smaller screens */
+.profile-box{
 }
 
-li {
-    list-style-type: none;
-    padding: 10px 0;
-}
-
-.button-container {
+.profile-heading{
     text-align: center;
+    padding-bottom: 40px;
+}
+
+.profile-field{
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    margin: 20px 0;
+}
+label{
+    display: flex;
+    align-items: center;
+}
+
+.profile-input{
+   padding: 5px 10px;
+   border-radius: 5px;
+   border: 1px solid gray;
+}
+
+.account-buttons{
+    display: flex;
+   justify-content: space-between;
+}
+
+.ac-btn{
+    width: 200px;
 }
 
 /* Media Query for screens with a maximum width of 768px (typical for mobile devices) */
-@media (max-width: 768px) {
-    .about {
-        flex-direction: column; /* Stack items vertically on smaller screens */
+@media (max-width: 991px) {
+    .profile-field{
+        display: grid;
+        grid-template-columns: 12fr;
+        margin: 20px 0;
     }
+    .account-buttons{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
 
-    .about-card {
-        width: 95%; /* Further adjust width for smaller screens */
+@media (max-width: 767px) {
+    .profile-card{
     }
+    .profile-form{
+        width: 100vw;
+    }
+    
 }

@@ -82,7 +82,7 @@ const LoginPage = () => {
                     </div>
                     <div className="form-group">
                         <div className="button">
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <button type="submit" className="submit-btn btn btn-primary">Submit</button>
                             <div className='new-user'>
                                 <span>Not a member?</span>
                                 <NavLink className="nav-link" to="/registration">Registration</NavLink>

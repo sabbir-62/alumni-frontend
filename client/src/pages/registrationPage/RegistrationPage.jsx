@@ -65,25 +65,7 @@ const RegistrationPage = () => {
         console.log(error)
        })
         
-       // reset form field value with empty
-        setState({
-        //   name: '',
-        //   studentId: '',
-        //   department: '',
-        //   passingYear: '',
-        //   email: '',
-        //   phone: '',
-        //   company: '',
-        //   role: '',
-        //   password: '',
-        //   confirmPassword: ''
-        });
     }
-
-    // const handleClick = () => {
-    //     const {name, email, phone, role, password, confirmPassword} = state;
-        
-    // }
 
 
 
@@ -135,8 +117,8 @@ const RegistrationPage = () => {
                         <input type="text" name='confirmPassword' id='confirmPassword' className='input-field' autoComplete='off' value={state.confirmPassword} onChange={(e) => {setValues("confirmPassword", e.target.value)}} placeholder="Enter Your Confirm Password"/>
                     </div>
                     <div className="form-group">
-                        <div className="button">
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                        <div className="registration-buttons">
+                            <button type="submit" className="btn submit-btn btn-primary">Submit</button>
                             <NavLink className="nav-link" to="/login">I am already registered</NavLink>
                         </div>
                     </div>
