@@ -43,26 +43,36 @@ label{
 }
 
 .ac-btn{
-    width: 200px;
+    width: 205px;
 }
 
 /* Media Query for screens with a maximum width of 768px (typical for mobile devices) */
+@media (max-width: 1199px) {
+    .ac-btn{
+        width: 150px;
+    }
+    
+}
+
 @media (max-width: 991px) {
     .profile-field{
         display: grid;
         grid-template-columns: 12fr;
         margin: 20px 0;
+        width: 200px;
     }
     .account-buttons{
         display: flex;
         flex-direction: column;
     }
+
+    .ac-btn{
+        width: 205px;
+    }
     
 }
 
 @media (max-width: 767px) {
-    .profile-card{
-    }
     .profile-form{
         width: 100vw;
     }

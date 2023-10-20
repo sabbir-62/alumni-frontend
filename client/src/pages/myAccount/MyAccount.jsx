@@ -192,8 +192,8 @@ const MyAccount = () => {
                             <input type="text" name='role' id='role' className='profile-input'  value={state.role} onChange={(e) => {setValues("role", e.target.value)}} placeholder="Enter Your Role"/>
                         </div>
                         <div className="account-buttons">
-                            <button type='submit' className='btn save-profile-btn ac-btn btn-primary mt-3'>Save Profile</button>
                             <button className='btn logout-btn ac-btn btn-danger mt-3' onClick={handleClick}>Logout</button>
+                            <button type='submit' className='btn save-profile-btn ac-btn btn-primary mt-3'>Save Profile</button>
                         </div>
                     </div>
                 </form>
