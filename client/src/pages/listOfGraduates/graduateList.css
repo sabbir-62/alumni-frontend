@@ -1,22 +1,13 @@
-.lists{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4rem;
+.list-table{
+    margin: 7rem 0 2rem 0;
+}
+td, tr{
+    height: 70px;
+    vertical-align: middle; /* Center the text vertically */
 }
 
-.list{
-    width: 50rem;
-    padding: 50px;
-    
-}
-
-.list-block{
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-}
-
-.list-block .name{
-    font-size: 20px;
-    font-weight: 500;
+@media (max-width: 991px) {
+    .lists{
+        overflow: scroll;
+    }
 }
