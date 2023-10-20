@@ -1,4 +1,5 @@
-import { lazy, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate  } from 'react-router-dom';
 import './newsPage.css'
 import { toast } from 'react-toastify';
 import { BeatLoader } from "react-spinners";
@@ -64,6 +65,12 @@ const NewsPage = () => {
             }
         }
     }
+
+
+    const navigate = useNavigate(); // Call useNavigate as a function
+    const addNews = async()=> {
+        navigate('/create-news')
+    }
     
 
     return (
@@ -81,16 +88,19 @@ const NewsPage = () => {
                   )
                 :
                 <div className="news">
-                {news.title.map((title, index) => 
-                    ( 
-                    <div key={index} className="m-5 news-block p-5">
-                        <p className="title">{title}</p>
-                        <p className="news-date">{news.date[index]}</p>
-                        <p className="description">{news.description[index]}</p>
-                        <button id="button" className="btn btn-success mt-3" onClick={()=>handleClick(index)}>Read More</button>
+                    {news.title.map((title, index) => 
+                        ( 
+                        <div key={index} className="news-block">
+                            <p className="title">{title}</p>
+                            <p className="news-date">{news.date[index]}</p>
+                            <p className="description">{news.description[index]}</p>
+                            <button id="button" className="btn btn-success mt-3" onClick={()=>handleClick(index)}>Read More</button>
+                        </div>
+                    ))}
+                    <div className="news-btn">
+                        <button className="btn btn-primary add-news-btn" onClick={addNews}>Add New News</button>
                     </div>
-                ))}
-            </div>
+                </div>
             }
         </div>
     );
