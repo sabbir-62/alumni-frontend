@@ -72,6 +72,39 @@ const NewsPage = () => {
     const addNews = async()=> {
         navigate('/create-news')
     }
+
+
+    /*----------Delete News----------*/
+    const deleteNews = async(title)=> {
+
+        //backend api endpoint
+        const url = "http://localhost:8000/api/v1/delete-news";
+
+        // post data using fetch api
+        await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify({
+                title
+            }),
+        })
+       .then((response) => response.json())
+       .then((data) => {
+            if(data.success){
+                toast.success(data.message);
+                navigate('/news');
+                window.location.reload(); // Reload the page
+            }
+            else{
+                toast.error(data.message)
+            }
+       })
+       .catch((error) => {
+        console.log(error)
+       })
+    }
     
 
     return (
@@ -95,7 +128,8 @@ const NewsPage = () => {
                             <p className="title">{title}</p>
                             <p className="news-date">{news.date[index]}</p>
                             <p className="description">{news.description[index]}</p>
-                            <button id="button" className="btn btn-success mt-3" onClick={()=>handleClick(index)}>Read More</button>
+                            <button id="button" className="btn btn-success mt-3 news-button" onClick={()=>handleClick(index)}>Read More</button>
+                            <button id="button" className="btn btn-danger mt-3 delete-btn news-button" onClick={()=>deleteNews(title)}>Delete</button>
                         </div>
                     ))}
                     <div className="news-btn">

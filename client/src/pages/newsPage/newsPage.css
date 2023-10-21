@@ -31,6 +31,10 @@
     overflow: hidden;
 }
 
+.news-button{
+    width: 10rem;
+}
+
 .news-btn{
     width: 100%;
     text-align: center;
@@ -42,6 +46,19 @@
     padding: 12px;
 }
 
+.delete-btn{
+    margin-left: 20px;
+}
+
+@media (max-width: 767px) {
+    .news-button{
+        width: 100%;
+        padding: 10px;
+    }
+    .delete-btn{
+        margin-left: 0;
+    }
+}
 
 @media (max-width: 467px) {
     .add-news-btn{
