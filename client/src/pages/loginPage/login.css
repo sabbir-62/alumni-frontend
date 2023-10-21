@@ -1,18 +1,30 @@
 .login-page{
-    height: 90vh;
-}
-
-.login{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+
+}
+
+.login{
+    margin-top: 5rem;
+    margin-bottom: 1rem;
 }
 
 .login-form{
+    margin: 0 auto;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    width: 50%;
+  
+}
+
+.login-header{
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 3rem;
 }
 
 .form-group{
@@ -20,7 +32,7 @@
 }
 
 .input-field{
-    width: 40vw;
+    width: 100%;
     height: 40px;
     border: none;
     border-bottom: 1px solid;
@@ -31,36 +43,55 @@
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
-
+    width: 100%;
 }
 
-.submit-btn{
-    width: 20%;
+.login-btn{
+    width: 30%;
     text-align: center;
 }
 
 .new-user{
     display: flex;
+    justify-content: space-between;
 }
 
-.new-user .nav-link{
+.new-user .login-nav-link{
     margin-left: 10px;
     color: blue;
 }
 
-@media only screen and (max-width: 1200px){
+
+@media only screen and (max-width: 1199px){
 	.button{
         display: flex;
         flex-direction: column;
     }
-    .submit-btn{
-        width: 100%;
+    
+    .login-btn{
         text-align: center;
         margin-bottom: 20px;
+        width: 50%;
     }
-    .nav-link{
-        width: 100%;
-        text-align: center;
+}
 
+@media only screen and (max-width: 991px){
+	.login-form{
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 767px){
+	.login-form{
+        width: 70%;
+    }
+
+    .login-btn{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 499px){
+	.login-form{
+        width: 80%;
     }
 }

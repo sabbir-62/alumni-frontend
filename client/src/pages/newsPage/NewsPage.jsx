@@ -14,7 +14,7 @@ const NewsPage = () => {
     });
 
     const getNews = async() => {
-        const url = "http://localhost:8000/api/v1/news";
+        const url = "https://alumni-backend-nu.vercel.app/api/v1/news";
 
         await fetch(url, {
             method: "GET",
@@ -78,7 +78,7 @@ const NewsPage = () => {
     const deleteNews = async(title)=> {
 
         //backend api endpoint
-        const url = "http://localhost:8000/api/v1/delete-news";
+        const url = "https://alumni-backend-nu.vercel.app/api/v1/delete-news";
 
         // post data using fetch api
         await fetch(url, {

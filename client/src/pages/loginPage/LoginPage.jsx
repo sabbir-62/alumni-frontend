@@ -29,7 +29,7 @@ const LoginPage = () => {
         const {email, password} = state;
 
         // backend api endpoint
-        const url = "http://localhost:8000/api/v1/login";
+        const url = "https://alumni-backend-nu.vercel.app/api/v1/login";
 
         // post data using fetch api
         await fetch(url, {
@@ -69,9 +69,12 @@ const LoginPage = () => {
     }
     return (
         <>
-        <div className="login-page">
+        <div className="login-page min-height">
             <div className="container login">
                 <form className="login-form" method='POST' onSubmit={handleSubmit}>
+                    <div className="login-header">
+                        Login
+                    </div>
                     <div className="form-group">
                         <label htmlFor="email"></label>
                         <input type="text" className='input-field' name='email' id='email' autoComplete='off' value={state.email} onChange={(e) => {setValue("email", e.target.value)}} placeholder="Enter Your Email"/>
@@ -82,10 +85,10 @@ const LoginPage = () => {
                     </div>
                     <div className="form-group">
                         <div className="button">
-                            <button type="submit" className="submit-btn btn btn-primary">Submit</button>
+                            <button type="submit" className="login-btn btn btn-primary">Login</button>
                             <div className='new-user'>
-                                <span>Not a member?</span>
-                                <NavLink className="nav-link" to="/registration">Registration</NavLink>
+                                <span className='loginStatusBtn'>Not a member?</span>
+                                <NavLink className="login-nav-link" to="/registration">Registration</NavLink>
                             </div>
                         </div>
                     </div>

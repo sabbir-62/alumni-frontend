@@ -37,7 +37,7 @@ const RegistrationPage = () => {
         const {name, studentId, department, passingYear, email, phone, company, role, password, confirmPassword} = state;
 
         // backend api endpoint
-        const url = "http://localhost:8000/api/v1/registration";
+        const url = "https://alumni-backend-nu.vercel.app/api/v1/registration";
 
         // post data using fetch api
         await fetch(url, {
