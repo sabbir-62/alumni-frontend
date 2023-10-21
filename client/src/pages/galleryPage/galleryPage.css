@@ -2,8 +2,7 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 15px;
-    padding: 5rem;
-
+    padding: 7.3rem 3rem 2.5rem 3rem;
 }
 
 .gallery__img {
@@ -11,4 +10,24 @@
     height: 100%;
     object-fit: cover;
     cursor: pointer;
+}
+
+@media (max-width: 1199px) {
+    .gallery{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+}
+@media (max-width: 867px) {
+    .gallery{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
+@media (max-width: 467px) {
+    .gallery{
+        display: grid;
+        grid-template-columns: auto;
+        padding: 7rem 2rem 2rem 2rem;
+    }
 }
