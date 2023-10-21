@@ -61,7 +61,7 @@ label{
         width: 220px;
     }
     .profile-card{
-        
+        width: 60%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -75,9 +75,15 @@ label{
     .ac-btn{
         width: 200px;
     }
+    .profile-card{
+        width: 65%;
+    }
 }
 
 @media (max-width: 991px) {
+    .profile-card{
+        width: 70%;
+    }
     .profile-field{
         display: grid;
         grid-template-columns: 12fr;
@@ -97,6 +103,17 @@ label{
 @media (max-width: 767px) {
     .profile-form{
         width: 100vw;
+    }
+
+    .profile-card{
+        width: 80%;
+    }
+    
+}
+
+@media (max-width: 567px) {
+    .profile-card{
+        width: 90%;
     }
     
 }
