@@ -2,12 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5rem;
-    height: 100%;
 }
 
 .news{
     width: 80%;
+    margin-top: 5rem;
 }
 
 .news-block{
@@ -18,8 +17,8 @@
 }
 
 .news-block .title{
-    font-size: 40px;
-    font-weight: 500;
+    font-size: 35px;
+    font-weight: 600;
 }
 
 .news-block .news-date{
@@ -50,6 +49,16 @@
     margin-left: 20px;
 }
 
+@media (max-width: 991px) {
+    .news{
+        width: 100%;
+    }
+
+    .news-block .title{
+        font-size: 30px;
+    }
+}
+
 @media (max-width: 767px) {
     .news-button{
         width: 100%;
@@ -58,11 +67,24 @@
     .delete-btn{
         margin-left: 0;
     }
+    .news-block .title{
+        font-size: 25px;
+    }
+    
 }
 
 @media (max-width: 467px) {
     .add-news-btn{
         width: 80%;
         padding: 12px;
+    }
+
+    .news-block{
+        margin: 2rem 1rem;
+        padding: 1rem;
+    }
+
+    .news-block .title{
+        font-size: 20px;
     }
 }

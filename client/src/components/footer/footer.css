@@ -35,7 +35,6 @@
 @media (max-width: 467px) {
     .footer {
         padding: 1rem 0;
-        border: 2px solid red;
     }
     .footer p{
         padding: 0 10px;

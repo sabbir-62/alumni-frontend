@@ -108,7 +108,7 @@ const NewsPage = () => {
     
 
     return (
-        <div className="news-container container">
+        <div className="news-container container min-height">
             {
                 loading ?
                 (
