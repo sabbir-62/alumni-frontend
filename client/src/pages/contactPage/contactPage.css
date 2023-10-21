@@ -3,7 +3,6 @@
     padding: 0;
 }
 .contact-page{
-    height: 100vh;
 }
 
 .contact-list{
@@ -15,11 +14,10 @@
     gap: 10px;
     justify-content: center;
     align-items: center;
-    margin: 20px;
     padding: 30px 20px;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    margin-top: 8rem;
+    margin-top: 7rem;
 }
 p{
     margin: 0;
@@ -30,24 +28,6 @@ a{
     text-decoration: none;
 }
 
-@media only screen and (max-width: 1200px){
-	.contact-list{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-    .contact{
-        width: 100%;
-        display: flex;
-        margin-left: 13px;
-        margin-top: 2rem;
-    }
-    .contact:nth-child(1){
-        margin-top: 6rem;
-    }
-}
-
-
 .contact-form{
     display: flex;
     justify-content: center;
@@ -56,7 +36,7 @@ a{
 
 .content{
     padding: 60px 60px 10px 60px;
-    margin-top: 70px;
+    margin: 50px 0 40px 0;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
@@ -67,23 +47,72 @@ a{
 }
 
 .input{
-    border: 1px solid rgb(197, 197, 197);
+    border: 1px solid gray;
     outline: none;
     border-radius: 5px;
     height: 35px;
     padding-left: 10px;
     margin-top: 20px;
+    transition: .2s ease-in-out;
+}
+
+.input:hover{
+    padding: 15px;
+    height: 40px;
 }
 
 .text{
-    border: 1px solid rgb(197, 197, 197);
+    border: 1px solid gray;
     border-radius: 5px;
     outline: none;
     width: 100%;
+    transition: .2s ease-in-out;
+}
+
+.text:hover{
+   padding: 15px;
+}
+
+
+
+@media only screen and (max-width: 1199px){
+	.contact-list{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+    }
+    .contact{
+        width: 80%;
+        display: flex;
+        margin-top: 2rem;
+    }
+    .contact:nth-child(1){
+        margin-top: 7rem;
+    }
+}
+
+
+@media only screen and (max-width: 991px){
+    .contact{
+        width: 100%;
+    }
+}
+
+.button{
+    margin: 2rem 0px;
 }
 
 
 @media only screen and (max-width: 800px){
+
+    .contact{
+        width: 100%;
+    }
+    
 
     .contact-form{
         width: 100%;
@@ -100,6 +129,3 @@ a{
     }
 }
 
-.button{
-    margin: 2rem 0px;
-}
