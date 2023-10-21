@@ -13,7 +13,7 @@ const GraduateList = () => {
     const navigate = useNavigate();
 
     const list = async() => {
-        const url = "https://alumni-backend-nu.vercel.app/api/v1/graduates-list";
+        const url = "http://localhost:8000/api/v1/graduates-list";
         const cookie = Cookies.get("myCookie");
 
         if (!cookie) {

@@ -23,8 +23,9 @@ const AddNews = () => {
         e.preventDefault();
         const {title, description} = state;
 
+        //https://alumni-backend-nu.vercel.app
         // backend api endpoint
-        const url = "https://alumni-backend-nu.vercel.app/api/v1/create-news";
+        const url = "http://localhost:8000/api/v1/create-news";
 
         await fetch(url, {
             method: "POST",

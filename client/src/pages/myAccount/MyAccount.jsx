@@ -32,7 +32,7 @@ const MyAccount = () => {
             toast.warning("Please Login")
             navigate('/login')
         }
-        const url = "https://alumni-backend-nu.vercel.app/api/v1/about";
+        const url = "http://localhost:8000/api/v1/about";
         
         await fetch(url, {
             method: "POST",
@@ -102,7 +102,7 @@ const MyAccount = () => {
             navigate('/login')
         }
 
-        const url = "https://alumni-backend-nu.vercel.app/api/v1/update-profile";
+        const url = "http://localhost:8000/api/v1/update-profile";
 
         // post data using fetch api
         await fetch(url, {
