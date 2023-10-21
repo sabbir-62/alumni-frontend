@@ -70,7 +70,7 @@ const RegistrationPage = () => {
 
 
     return (
-        <div className="registration">
+        <div className="registration min-height">
             <div className="container registration-card">
                 <form className="registration-form" method='POST' onSubmit={handleSubmit}>
                     <h1 className="form-heading">

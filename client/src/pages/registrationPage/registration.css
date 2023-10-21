@@ -1,5 +1,4 @@
 .registration{
-    height: 100vh;
     margin: 12vh 0 4vh 0;
 }
 
@@ -7,10 +6,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
 }
 
 .registration-form{
+    width: 60%;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
@@ -26,7 +25,7 @@
 }
 
 .input-field{
-    width: 40vw;
+    width: 100%;
     height: 40px;
     border: none;
     border-bottom: 1px solid;
@@ -43,7 +42,10 @@
     text-align: center;
 }
 
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 1199px){
+    .registration-form{
+       width: 70%;
+    }
 	.registration-buttons{
         display: flex;
         flex-direction: column;
@@ -56,5 +58,17 @@
     .nav-link{
         width: 100%;
         text-align: center;
+    }
+}
+
+@media only screen and (max-width: 991px){
+    .registration-form{
+       width: 90%;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .registration-form{
+       width: 100%;
     }
 }
