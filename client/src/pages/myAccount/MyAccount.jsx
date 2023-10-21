@@ -68,7 +68,6 @@ const MyAccount = () => {
        .catch((error) => {
             console.log(error)
             //alert("No user logged in")
-            navigate('/login');
        })
       
       

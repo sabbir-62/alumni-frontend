@@ -1,4 +1,4 @@
-.nav-wrapper{
+.nav-wrapper {
     width: 100%;
     position: fixed;
     top: 0;
@@ -7,8 +7,16 @@
     padding: 10px;
 }
 
+.nav-content {
+    transition: height 0.3s ease-in-out;
+}
+
+.show {
+    height: 100%;
+}
+
 @media (max-width: 991px) {
-    .nav-wrapper{
+    .nav-wrapper {
         z-index: 1;
     }
 }

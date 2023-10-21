@@ -1,9 +1,22 @@
+
 import { NavLink } from 'react-router-dom';
 import Logo from '../../assets/pictures/logo.png';
 import './navbar.css';
+import { useState } from 'react';
 
 
 const Navbar = () => {
+
+    const [isShow, setShow] = useState('')
+
+    const handleClick = () => {
+        if(!isShow){
+            setShow('show')
+        }
+        if(isShow){
+            setShow('')
+        }
+    }
 
 
     return (
@@ -13,32 +26,32 @@ const Navbar = () => {
                     <NavLink className="navbar-brand" to="/">
                         <img className='image-thumbnail' style={{ width: "50px" }} src={Logo} alt="logo" />
                     </NavLink>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="navbar-toggler" onClick={handleClick}>
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                     
+
+                    <div className={`collapse navbar-collapse ${isShow}`} id="navbarNav">
                             <ul className="navbar-nav ms-auto">
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
+                                    <NavLink className="nav-link" aria-current="page" to="/" onClick={handleClick}>Home</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/my-account">My Account</NavLink>
+                                    <NavLink className="nav-link" to="/my-account" onClick={handleClick}>My Account</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/graduates-list">Graduates</NavLink>
+                                    <NavLink className="nav-link" to="/graduates-list" onClick={handleClick}>Graduates</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/news">News</NavLink>
+                                    <NavLink className="nav-link" to="/news" onClick={handleClick}>News</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/events">Events</NavLink>
+                                    <NavLink className="nav-link" to="/events" onClick={handleClick}>Events</NavLink>
                                 </li> 
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/gallery">Gallery</NavLink>
+                                    <NavLink className="nav-link" to="/gallery" onClick={handleClick}>Gallery</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/contact">Contact Us</NavLink>
+                                    <NavLink className="nav-link" to="/contact" onClick={handleClick}>Contact Us</NavLink>
                                 </li> 
                             </ul>
                     </div>
