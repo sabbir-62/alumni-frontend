@@ -28,15 +28,25 @@
     margin-top: 6rem;
 }
 
-@media only screen and (max-width: 1200px){
+.home-text{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 1199px){
     .header-text{
         font-size: 30px;
         margin: 0px 40px;
     }
 }
 
-
-.home-text{
-    margin-top: 50px;
-    margin-bottom: 50px;
+@media only screen and (max-width: 991px){
+    .header-text{
+        margin: 0px 30px;
+    }
+}
+@media only screen and (max-width: 461px){
+    .header-text{
+        margin: 0px 20px;
+    }
 }
