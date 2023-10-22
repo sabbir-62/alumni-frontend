@@ -50,9 +50,7 @@ const Navbar = () => {
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/gallery" onClick={handleClick}>Gallery</NavLink>
                                 </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/contact" onClick={handleClick}>Contact Us</NavLink>
-                                </li> 
+                                
                             </ul>
                     </div>
                 </div>
@@ -62,3 +60,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+                                // <li className="nav-item">
+                                //     <NavLink className="nav-link" to="/contact" onClick={handleClick}>Contact Us</NavLink>
+                                // </li> 
