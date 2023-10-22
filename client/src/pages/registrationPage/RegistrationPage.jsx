@@ -58,7 +58,7 @@ const RegistrationPage = () => {
                 }
             }
             else{
-                toast.error("Something went wrong!")
+                toast.error(data.message)
             }
        })
        .catch((error) => {
