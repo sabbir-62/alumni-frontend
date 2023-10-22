@@ -14,6 +14,7 @@ const GraduateList = () => {
 
     const list = async() => {
         const url = "https://alumni-backend-nu.vercel.app/api/v1/graduates-list";
+
         const cookie = Cookies.get("myCookie");
 
         if (!cookie) {

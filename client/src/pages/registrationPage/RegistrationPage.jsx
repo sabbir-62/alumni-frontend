@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 
 
 const RegistrationPage = () => {
+
     // Initial state
     const [state, setState] = useState({
         name: "",
@@ -57,8 +58,11 @@ const RegistrationPage = () => {
                     navigate('/login');
                 }
             }
+            else if(!data.message){
+                toast.error("All fields are required")
+            }
             else{
-                toast.error(data.message)
+                toast.error("Please Enter Valid Student Id and Email")
             }
        })
        .catch((error) => {

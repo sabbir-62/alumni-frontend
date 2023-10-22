@@ -3,6 +3,7 @@ import { useNavigate  } from 'react-router-dom';
 import './newsPage.css'
 import { toast } from 'react-toastify';
 import { BeatLoader } from "react-spinners";
+import Cookies from "js-cookie";
 
 
 const NewsPage = () => {
@@ -13,8 +14,16 @@ const NewsPage = () => {
         date: []
     });
 
+
     const getNews = async() => {
         const url = "https://alumni-backend-nu.vercel.app/api/v1/news";
+
+        const cookie = Cookies.get("myCookie");
+
+        if (!cookie) {
+            toast.warning("Please Login");
+            navigate('/login');
+        }
 
         await fetch(url, {
             method: "GET",
