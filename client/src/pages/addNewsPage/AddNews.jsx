@@ -3,12 +3,17 @@ import { toast } from 'react-toastify';
 import { useNavigate  } from 'react-router-dom';
 import './addNews.css'
 
+import { useContext } from 'react';
+import myContext from '../../components/contextApi/DataContext';
+
 const AddNews = () => {
+    const {email, setEmail} = useContext(myContext);
+  
     const [state, setState] = useState({
         title: "",
-        description: ""
-
+        description: "",
     })
+
 
     const setValues = (key, value) => {
         setState({
@@ -25,7 +30,7 @@ const AddNews = () => {
 
         //https://alumni-backend-nu.vercel.app
         // backend api endpoint
-        const url = "https://alumni-backend-nu.vercel.app/api/v1/create-news";
+        const url = "http://localhost:8000/api/v1/create-news";
 
         await fetch(url, {
             method: "POST",
@@ -33,7 +38,7 @@ const AddNews = () => {
                 "Content-Type" : "application/json"
             },
             body: JSON.stringify({
-                title, description
+                title, description, email
             })
         })
        .then((response) => response.json())

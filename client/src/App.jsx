@@ -15,35 +15,18 @@ import EventPage from './pages/eventsPage/EventPage';
 import Navbar from './components/navbar/Navbar.jsx';
 import Footer from './components/footer/Footer.jsx';
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { BeatLoader } from "react-spinners";
-
 import './App.css';
-import { useEffect, useState } from 'react';
 import AddNews from './pages/addNewsPage/AddNews';
 
-function App() {
-  const [loading, setLoading] = useState(true); // Set loading to true initially
+import myContext from './components/contextApi/DataContext';
+import { useState } from 'react';
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false); // Change loading state to false after 2000ms (2 seconds)
-    }, 1000);
-  }, []);
+function App() {
+  const [email, setEmail ]  = useState("")
+    
 
   return (
-    <div className='app'>
-      {loading ? (
-        <div className="loader">
-          <BeatLoader
-            color={"#36d7b7"}
-            loading={loading}
-            size={15}
-          />
-        </div>
-      ) : (
-        <div className="app-container">
+        <myContext.Provider className="app-container" value={{email, setEmail}}>
           <Navbar />
           <Routes>
               <Route exact path='/' element={<HomePage />}></Route>
@@ -59,23 +42,10 @@ function App() {
               <Route exact path='/logout' element={<Logout />}></Route>
               <Route exact path='*' element={<ErrorPage />}></Route>
           </Routes>
-          <Footer className="footer-app"/>
-          <ToastContainer
-            position="top-center"
-            autoClose={2000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            draggable
-            theme="dark"
-          />
-        </div>
-      )}
-    </div>
+          <Footer />
+        </myContext.Provider>
   );
 }
-
 export default App;
 
 

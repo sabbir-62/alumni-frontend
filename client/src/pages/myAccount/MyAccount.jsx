@@ -7,9 +7,15 @@ import './myAccount.css'
 import { toast } from 'react-toastify';
 import { BeatLoader } from "react-spinners";
 
+import { useContext } from 'react';
+import myContext from '../../components/contextApi/DataContext';
+
+
 
 /*-----------Main function component---------*/
 const MyAccount = () => {
+
+    const {email, setEmail} = useContext(myContext);
 
     const [loading, setLoading] = useState(true)  //for set loading spinner
     const [state, setState] = useState({
@@ -32,7 +38,7 @@ const MyAccount = () => {
             toast.warning("Please Login")
             navigate('/login')
         }
-        const url = "https://alumni-backend-nu.vercel.app/api/v1/about";
+        const url = "http://localhost:8000/api/v1/about";
         
         await fetch(url, {
             method: "POST",
@@ -61,7 +67,10 @@ const MyAccount = () => {
                     role: data.user.role
                 })
 
+                setEmail(data.user.email);
+                
                 setLoading(false)
+                
             }
            
        })
@@ -101,7 +110,7 @@ const MyAccount = () => {
             navigate('/login')
         }
 
-        const url = "https://alumni-backend-nu.vercel.app/api/v1/update-profile";
+        const url = "http://localhost:8000/api/v1/update-profile";
 
         // post data using fetch api
         await fetch(url, {
@@ -135,6 +144,9 @@ const MyAccount = () => {
     useEffect(() => {
         myAccountPage();
     }, []); // Empty dependency array to run the effect once
+
+
+    
 
     return (
         <div>

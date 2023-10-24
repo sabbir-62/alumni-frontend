@@ -30,8 +30,12 @@
     overflow: hidden;
 }
 
+.news-buttons{
+   display: flex
+}
+
 .news-button{
-    width: 10rem;
+    width: 8rem;
 }
 
 .news-btn{

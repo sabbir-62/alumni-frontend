@@ -5,18 +5,26 @@ import { toast } from 'react-toastify';
 import { BeatLoader } from "react-spinners";
 import Cookies from "js-cookie";
 
+import { useContext } from 'react';
+import myContext from '../../components/contextApi/DataContext';
+
 
 const NewsPage = () => {
     const [loading, setLoading] = useState(true);
     const [news, setNews] = useState({
         title: [],
         description: [],
-        date: []
+        date: [],
+        userEmail: []
     });
 
+    const {email, setEmail} = useContext(myContext);
+
+    console.log("sabbir", email)
+   
 
     const getNews = async() => {
-        const url = "https://alumni-backend-nu.vercel.app/api/v1/news";
+        const url = "http://localhost:8000/api/v1/news";
 
         const cookie = Cookies.get("myCookie");
 
@@ -37,16 +45,18 @@ const NewsPage = () => {
                 toast.error(data.message);
             }
             else {
+                console.log(data.news)
                 // Extract titles, descriptions, and dates into separate arrays
                 const titles = data.news.map(newsItem => newsItem.title);
                 const descriptions = data.news.map(newsItem => newsItem.description);
                 const dates = data.news.map(newsItem => new Date(newsItem.createdAt).toLocaleDateString());
-
+                const emails = data.news.map(newsItem => newsItem.email);
                 // Update the state with the extracted data
                 setNews({
                     title: titles,
                     description: descriptions,
-                    date: dates
+                    date: dates,
+                    userEmail: emails
                 });
                 setLoading(false)
             }
@@ -137,8 +147,13 @@ const NewsPage = () => {
                             <p className="title">{title}</p>
                             <p className="news-date">{news.date[index]}</p>
                             <p className="description">{news.description[index]}</p>
-                            <button id="button" className="btn btn-success mt-3 news-button" onClick={()=>handleClick(index)}>Read More</button>
-                            <button id="button" className="btn btn-danger mt-3 delete-btn news-button" onClick={()=>deleteNews(title)}>Delete</button>
+                            <div className="news-buttons">
+                                <button id="button" className="btn btn-success mt-3 news-button" onClick={()=>handleClick(index)}>Read More</button>
+                                {
+                                email === news.userEmail[index] ? <button id="button" className="btn btn-danger mt-3 delete-btn news-button" onClick={()=>deleteNews(title)}>Delete</button>: ""
+                                }
+
+                            </div>
                         </div>
                     ))}
                     <div className="news-btn">

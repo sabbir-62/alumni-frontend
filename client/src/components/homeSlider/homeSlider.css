@@ -1,9 +1,9 @@
 .hero{
-   
+   width: 99vw;
 }
 .slider-image-block{
     height: 35rem;
-    width: 100vw;
+    width: 100%;
 }
 
 .slider-image{
