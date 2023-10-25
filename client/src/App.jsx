@@ -16,24 +16,27 @@ import Navbar from './components/navbar/Navbar.jsx';
 import Footer from './components/footer/Footer.jsx';
 
 import './App.css';
-import AddNews from './pages/addNewsPage/AddNews';
+import AddNews from './pages/newsPage/addNewsPage/AddNews'
 
-import myContext from './components/contextApi/DataContext';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { useState } from 'react';
+import MyNews from './pages/newsPage/myNewsPage.jsx/MyNews';
 
 function App() {
-  const [email, setEmail ]  = useState("")
     
 
   return (
-        <myContext.Provider className="app-container" value={{email, setEmail}}>
+        <div className="app-container">
           <Navbar />
           <Routes>
               <Route exact path='/' element={<HomePage />}></Route>
               <Route exact path='/my-account' element={<MyAccount />}></Route>
               <Route exact path='/graduates-list' element={<GraduateList />}></Route>
-              <Route exact path='/news' element={<NewsPage />}></Route>
-              <Route exact path='/create-news' element={<AddNews />}></Route>
+              <Route exact path='/post' element={<NewsPage />}></Route>
+              <Route exact path='/create-post' element={<AddNews />}></Route>
+              <Route exact path='/my-post' element={<MyNews />}></Route>
               <Route exact path='/gallery' element={<GalleryPage />}></Route>
               <Route exact path='/events' element={<EventPage />}></Route>
               <Route exact path='/contact' element={<ContactPage />}></Route>
@@ -43,7 +46,20 @@ function App() {
               <Route exact path='*' element={<ErrorPage />}></Route>
           </Routes>
           <Footer />
-        </myContext.Provider>
+
+          <ToastContainer
+              position="top-center"
+              autoClose={1000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+              />
+        </div>
   );
 }
 export default App;

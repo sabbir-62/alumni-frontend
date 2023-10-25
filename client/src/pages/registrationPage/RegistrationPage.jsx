@@ -56,6 +56,7 @@ const RegistrationPage = () => {
                 toast.success(data.message);
                 if(data.success == true){
                     navigate('/login');
+                    toast.success("Registration Success. Please Login")
                 }
             }
             else if(!data.message){

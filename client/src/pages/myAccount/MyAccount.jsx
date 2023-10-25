@@ -7,16 +7,11 @@ import './myAccount.css'
 import { toast } from 'react-toastify';
 import { BeatLoader } from "react-spinners";
 
-import { useContext } from 'react';
-import myContext from '../../components/contextApi/DataContext';
 
 
 
 /*-----------Main function component---------*/
 const MyAccount = () => {
-
-    const {email, setEmail} = useContext(myContext);
-
     const [loading, setLoading] = useState(true)  //for set loading spinner
     const [state, setState] = useState({
         name: "",
@@ -66,8 +61,6 @@ const MyAccount = () => {
                     company: data.user.company,
                     role: data.user.role
                 })
-
-                setEmail(data.user.email);
                 
                 setLoading(false)
                 

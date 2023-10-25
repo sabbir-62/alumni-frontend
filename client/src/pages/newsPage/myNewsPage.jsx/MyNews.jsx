@@ -1,29 +1,80 @@
 import { useEffect, useState } from "react";
-import { useNavigate  } from 'react-router-dom';
-import './newsPage.css'
+//import './newsPage.css'
 import { toast } from 'react-toastify';
 import { BeatLoader } from "react-spinners";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 
-
-const NewsPage = () => {
-    const [loading, setLoading] = useState(true);
+/*----------MyNews Component---------*/
+const MyNews = () => {
+    
+    const [loading, setLoading] = useState(false);
     const [news, setNews] = useState({
         title: [],
         description: [],
         date: [],
-        userEmail: []
     });
-   
 
+    const [state, setState] = useState({
+        email: ""
+    })
+
+
+    const navigate = useNavigate();
+
+
+    // Getting Email information from database
+    const getEmail = async() => {
+        const cookie = Cookies.get("myCookie");
+        if(!cookie){
+            toast.warning("Please Login")
+            navigate('/login')
+        }
+        const url = "http://localhost:8000/api/v1/about";
+        
+        await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify({
+               cookie
+            }),
+           
+        })
+       .then((response) => response.json())
+       .then((data) => {
+            if(!data.success){
+                navigate('/login');     
+            }
+            else{
+                setState({
+                    email: data.user.email,
+                })
+            }
+           
+       })
+       .catch((error) => {
+            console.log(error);
+       })  
+      
+    }
+
+    useEffect(() => {
+        getEmail();
+    }, []); // Empty dependency array to run the effect once
+
+
+
+    //Get-My post
     const getNews = async() => {
+       
         const url = "http://localhost:8000/api/v1/post";
 
         const cookie = Cookies.get("myCookie");
-
         if (!cookie) {
-            navigate('/login');
+            //navigate('/login');
             toast.warning("Please Login");
         }
 
@@ -62,6 +113,7 @@ const NewsPage = () => {
     }, []);
 
 
+
     let count = 0;
     const handleClick = (index) => { 
         const descriptionElements = document.getElementsByClassName("description");
@@ -79,26 +131,47 @@ const NewsPage = () => {
     }
 
 
-    const navigate = useNavigate(); // Call useNavigate as a function
-    const addNews = async()=> {
-        navigate('/create-post')
+
+     /*----------Delete News----------*/
+    const deleteNews = async(title)=> {
+        //backend api endpoint
+        const url = "http://localhost:8000/api/v1/delete-post";
+
+        // post data using fetch api
+        await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify({
+                title
+            }),
+        })
+       .then((response) => response.json())
+       .then((data) => {
+            if(data.success){
+                toast.success("Delete Success");
+                setLoading(true)
+                setTimeout(() => {
+                    window.location.reload();
+                    setLoading(false)
+                }, 1700)
+            }
+            else{
+                toast.error(data.message)
+            }
+       })
+       .catch((error) => {
+        console.log(error)
+       })
     }
 
-    const myPost = () => {
-        navigate("/my-post")
-    }
 
 
-   
-    
 
     return (
-       <div className="newsPage min-height">
-            <div className="news-btn">
-                <button className="btn btn-primary add-news-btn" onClick={addNews}>Add Post</button>
-                <button className="btn btn-primary add-news-btn ms-2" onClick={myPost}>My Post</button>
-            </div>
-            <div className="news-container container"> 
+        <div>
+            <div className="news-container container min-height"> 
                 {
                     loading ?
                     (
@@ -120,7 +193,7 @@ const NewsPage = () => {
                                 <p className="description">{news.description[index]}</p>
                                 <div className="news-buttons">
                                     <button id="button" className="btn btn-success mt-3 news-button" onClick={()=>handleClick(index)}>Read More</button>
-                                    {/* <button id="button" className="btn btn-danger mt-3 delete-btn news-button" onClick={()=>deleteNews(title)}>Delete</button> */}
+                                    <button id="button" className="btn btn-danger mt-3 delete-btn news-button" onClick={()=>deleteNews(title)}>Delete</button>
 
                                 </div>
                             </div>
@@ -132,4 +205,4 @@ const NewsPage = () => {
     );
 };
 
-export default NewsPage;
+export default MyNews;

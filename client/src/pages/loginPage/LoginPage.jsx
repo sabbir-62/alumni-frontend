@@ -2,8 +2,10 @@ import './login.css';
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Cookies from "js-cookie"; 
-//import { useCookies } from 'react-cookie'
 import { toast } from 'react-toastify';
+//import { useCookies } from 'react-cookie'
+// import { toast, ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -43,18 +45,15 @@ const LoginPage = () => {
         })
        .then((response) => response.json())
        .then((data) => {
-            if(data.success){
-                toast.success(data.message);
-                
+            if(data.success){      
                 //console.log(data.data)
-                 if(data.success == true){
-                    Cookies.set("myCookie", data.data);
-                     //console.log("login", data.data);
-                     navigate('/my-account');
-                 }
+                Cookies.set("myCookie", data.data);
+                //console.log("login", data.data);
+                navigate('/my-account');
+                toast.success("Login Success");
             }
             else{
-                toast.error(data.message)
+                //toast.error(data.message)
             }
        })
        .catch((error) => {
