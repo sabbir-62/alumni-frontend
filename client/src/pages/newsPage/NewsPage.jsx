@@ -120,8 +120,6 @@ const NewsPage = () => {
                                 <p className="description">{news.description[index]}</p>
                                 <div className="news-buttons">
                                     <button id="button" className="btn btn-success mt-3 news-button" onClick={()=>handleClick(index)}>Read More</button>
-                                    {/* <button id="button" className="btn btn-danger mt-3 delete-btn news-button" onClick={()=>deleteNews(title)}>Delete</button> */}
-
                                 </div>
                             </div>
                         ))}

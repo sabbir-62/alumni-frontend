@@ -1,3 +1,10 @@
+.no-post-text{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+
 .news-container{
     display: flex;
     justify-content: center;
@@ -64,9 +71,14 @@
 }
 
 @media (max-width: 767px) {
+    .news-buttons{
+        display: flex;
+        justify-content: space-between;
+    }
+    
     .news-button{
-        width: 100%;
-        padding: 10px;
+        width:40%;
+        padding: 5px;
     }
     .delete-btn{
         margin-left: 0;
@@ -97,4 +109,23 @@
     .news-block .title{
         font-size: 20px;
     }
+}
+
+@media (max-width: 312px) {
+    .news-buttons{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .news-button{
+        width:100%;
+        padding: 5px;
+    }
+    .delete-btn{
+        margin-left: 0;
+    }
+    .news-block .title{
+        font-size: 25px;
+    }
+    
 }
