@@ -34,7 +34,7 @@ const MyNews = () => {
             toast.warning("Please Login")
             navigate('/login')
         }
-        const url = "http://localhost:8000/api/v1/about";
+        const url = "https://alumni-backend-nu.vercel.app/api/v1/about";
         
         await fetch(url, {
             method: "POST",
@@ -72,7 +72,7 @@ const MyNews = () => {
 
     // fetching login user post
     const getNews = async() => {
-        const url = "http://localhost:8000/api/v1/post";
+        const url = "https://alumni-backend-nu.vercel.app/api/v1/post";
 
 
         await fetch(url, {
@@ -114,7 +114,7 @@ const MyNews = () => {
      //Delete News
     const deleteNews = async(title)=> {
         //backend api endpoint
-        const url = "http://localhost:8000/api/v1/delete-post";
+        const url = "https://alumni-backend-nu.vercel.app/api/v1/delete-post";
 
         // post data using fetch api
         await fetch(url, {

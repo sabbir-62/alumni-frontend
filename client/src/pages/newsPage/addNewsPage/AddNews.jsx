@@ -25,7 +25,7 @@ const AddNews = () => {
             toast.warning("Please Login")
             navigate('/login')
         }
-        const url = "http://localhost:8000/api/v1/about";
+        const url = "https://alumni-backend-nu.vercel.app/api/v1/about";
         
         await fetch(url, {
             method: "POST",
@@ -83,7 +83,7 @@ const AddNews = () => {
 
         //https://alumni-backend-nu.vercel.app
         // backend api endpoint
-        const url = "http://localhost:8000/api/v1/create-post";
+        const url = "https://alumni-backend-nu.vercel.app/api/v1/create-post";
 
         await fetch(url, {
             method: "POST",

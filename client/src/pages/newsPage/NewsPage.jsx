@@ -21,7 +21,7 @@ const NewsPage = () => {
 
     // fetch all post
     const getNews = async() => {
-        const url = "http://localhost:8000/api/v1/post";
+        const url = "https://alumni-backend-nu.vercel.app/api/v1/post";
 
         const cookie = Cookies.get("myCookie");
 
