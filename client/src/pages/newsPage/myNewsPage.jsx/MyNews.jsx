@@ -23,6 +23,7 @@ const MyNews = () => {
     });
 
 
+
     const navigate = useNavigate();
 
 
@@ -104,8 +105,6 @@ const MyNews = () => {
         });
     }
 
-    
-
     useEffect(() => {
         getNews();
     }, []);
@@ -145,6 +144,7 @@ const MyNews = () => {
         console.log(error)
        })
     }
+    
 
     
     let postCount = 0;

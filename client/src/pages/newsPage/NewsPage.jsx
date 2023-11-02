@@ -7,6 +7,7 @@ import Cookies from "js-cookie";
 
 
 
+/*-----------NewsPage Component----------*/
 const NewsPage = () => {
     const [loading, setLoading] = useState(true);
     const [news, setNews] = useState({
@@ -17,6 +18,8 @@ const NewsPage = () => {
     });
    
 
+
+    // fetch all post
     const getNews = async() => {
         const url = "http://localhost:8000/api/v1/post";
 
@@ -55,13 +58,15 @@ const NewsPage = () => {
         });
     }
 
-    
-
     useEffect(() => {
         getNews();
     }, []);
 
 
+
+
+
+    // Style adding for read more
     let count = 0;
     const handleClick = (index) => { 
         const descriptionElements = document.getElementsByClassName("description");
@@ -79,25 +84,29 @@ const NewsPage = () => {
     }
 
 
-    const navigate = useNavigate(); // Call useNavigate as a function
+    // Add new post
+    const navigate = useNavigate();
     const addNews = async()=> {
         navigate('/create-post')
     }
 
+
+    // Navigate my post page
     const myPost = () => {
         navigate("/my-post")
     }
 
 
-   
-    
 
+   
+    // Return JSX
     return (
        <div className="newsPage min-height">
             <div className="news-btn">
                 <button className="btn btn-primary add-news-btn" onClick={addNews}>Add Post</button>
                 <button className="btn btn-primary add-news-btn ms-2" onClick={myPost}>My Post</button>
             </div>
+        
             <div className="news-container container"> 
                 {
                     loading ?
