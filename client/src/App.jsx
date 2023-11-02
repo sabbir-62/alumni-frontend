@@ -21,7 +21,6 @@ import AddNews from './pages/newsPage/addNewsPage/AddNews'
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { useState } from 'react';
 import MyNews from './pages/newsPage/myNewsPage.jsx/MyNews';
 
 function App() {
